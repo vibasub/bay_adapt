@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+
+
+        <!-- Latest Bootstrap compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <!-- Links to CSS Stylesheets -->
+        <link rel="stylesheet" href="css/leaflet.css">
+        <link rel="stylesheet" href="css/qgis2web.css">
+        <link rel="stylesheet" href="css/animate.css">
+        <link rel="stylesheet" href="css/style.css">
+
+        <!-- Imported Fonts -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
+        <!-- Link to Javascript & JQuery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript" src="js/script.js"></script>
+
+        <title>Bay Adapt</title>
+    </head>
+
+
+    <body>
+        <!--Navigation -->
+        <nav class="navbar navbar-fixed-top">
+        <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+        <!-- (Is below code used for responsive?)-->
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        </button>
+        <div class="navbar-logo">Bay Adapt</div>
+        </div>
+        <!--Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+        <li class="hover"><a href="#">Map</a></li>
+        <li class="hover"><a href="project.html">Project</a></li>
+        <li class="hover"><a href="#">Shoreline Typologies</a></li>
+        <li class="hover"><a href="#">Adaptive Infrastructure</a></li>
+        </ul>
+        </div><!--.navbar-collapse -->
+        </div><!-- /.navbar-header -->
+        </div><!-- /.container-fluid -->
+        </nav>
+
+        <!--<div id="wrapper">-->
+        <div id="map"> </div>
+
+        <div id="tableOverlay">
+            <h4 id="edgeTypeTitle"> Edge Type <div id="edgeText"></div></h4>
+            <h4 id="waveExpTitle"> Wave Exposure <div id="waveText"></div></h4>
+            <h4 id="topoTitle"> Topography <div id="topoText"></div></h4>
+
+            <table class="resultsTable">
+            <tr>
+                <th id="tableHeader">Strategy</th>
+                <th id="tableHeader">Applicability</th>
+            </tr>
+            <div id="spaceBtwTitleAndStrats"></div>
+            <tr>
+                <td class="strategyHeaders">In Water Strategies</td>
+            </tr>
+            <tr>
+                <td class="strategyType">BreakWaters</td>
+                <td id="app1"></td>
+            </tr>
+            <tr>
+                <td class="strategyType">Artificial Reefs</td>
+                <td id="app2"></td>
+            </tr>
+            <tr>
+                <td class="strategyType">Groins</td>
+                <td id="app3"></td>
+            </tr>
+            <tr>
+                <td class="strategyType">Constructed Wetlands</td>
+                <td id="app4"></td>
+            </tr>
+            <tr>
+                <td class="strategyType">Floating Islands</td>
+                <td id="app5"></td>
+            </tr>
+            <tr>
+                <td class="strategyType">Built Breakwater Islands</td>
+                <td id="app6"></td>
+            </tr>
+            <tr>
+                <td class="strategyType">Surge Barriers</td>
+                <td id="app7"></td>
+            </tr>
+            <tr>
+                <td class="strategyType">Coastal Morphology Alteration</td>
+                <td id="app8"></td>
+            </tr>
+            <tr>
+                <td class="strategyType">Polders</td>
+                <td id="app9"></td>
+            </tr>
+                <div id="spaceBtwStrategies"> </div>
+            <tr>
+                <td class="strategyHeaders">Shoreline Strategies</td>
+            </tr>
+            <tr>
+                <td class="strategyType">Bulkheads</td>
+                <td id="app10"></td>
+            </tr>
+            <tr>
+                <td class="strategyType">Revetments</td>
+                <td id="app11"></td>
+            </tr>
+            <tr>
+                <td class="strategyType">Living Shorelines</td>
+                <td id="app12"></td>
+            </tr>
+            <tr>
+                <td class="strategyType">Seawalls</td>
+                <td id="app13"></td>
+            </tr>
+                <tr>
+                    <td class="strategyType">Beaches/Dunes</td>
+                    <td id="app14"></td>
+                </tr>
+                <tr>
+                    <td class="strategyType">Levees/Dikes</td>
+                    <td id="app15"></td>
+                </tr>
+                <tr>
+                    <td class="strategyType">Multi-Purpose Levees</t>
+                    <td id="app16"></td>
+                </tr>
+                <div id="spaceBtwStrategies"> </div>
+                <tr>
+                    <td class="strategyHeaders">Upland Strategies</td>
+                </tr>
+                 <tr>
+                    <td class="strategyType">Elevation of Land and Streets</td>
+                    <td id="app17"></td>
+                </tr>
+                 <tr>
+                    <td class="strategyType">Deployable Flood Walls</td>
+                    <td id="app18"></td>
+                </tr>
+                 <tr>
+                    <td class="strategyType">Permanent Flood Walls</td>
+                    <td id="app19"></td>
+                </tr>
+                 <tr>
+                    <td class="strategyType">Waterfront Parks</td>
+                    <td id="app20"></td>
+                </tr>
+                 <tr>
+                    <td class="strategyType">Strategic Retreat</td>
+                    <td id="app21"></td>
+                </tr>
+            <tr>
+            </tr>
+            </table>
+        </div>
+
+        <div id="case101" class="overlay"></div>
+        <div id="case102" class="overlay"></div>
+        <div id="case103" class="overlay"></div>
+        <div id="case111" class="overlay"></div>
+        <div id="case112" class="overlay"></div>
+        <div id="case113" class="overlay"></div>
+        <div id="case201" class="overlay"></div>
+        <div id="case202" class="overlay"></div>
+        <div id="case203" class="overlay"></div>
+        <div id="case211" class="overlay"></div>
+        <div id="case212" class="overlay"></div>
+        <div id="case213" class="overlay"></div>
+        <div id="case301" class="overlay"></div>
+        <div id="case302" class="overlay"></div>
+        <div id="case303" class="overlay"></div>
+        <div id="case311" class="overlay"></div>
+        <div id="case312" class="overlay"></div>
+        <div id="case313" class="overlay"></div>
+
+        <script src="js/qgis2web_expressions.js"></script>
+        <script src="js/leaflet.js"></script>
+        <script src="js/leaflet.rotatedMarker.js"></script>
+        <script src="js/leaflet.pattern.js"></script>
+        <script src="js/leaflet-hash.js"></script>
+        <script src="js/Autolinker.min.js"></script>
+        <script src="js/rbush.min.js"></script>
+        <script src="js/labelgun.min.js"></script>
+        <script src="js/labels.js"></script>
+        <script src="data/linedata_0.js"></script>
+
+
+        <script>
+        var map = L.map('map', {
+            zoomControl:false, maxZoom:28, minZoom:1
+            }).fitBounds([[37.773807,-122.132785],[37.8353140727,-122.333996188]]);
+        map.setView(new L.LatLng(37.773807, -122.132785), 10.04);
+        var hash = new L.Hash(map);
+            map.attributionControl.addAttribution('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a>');
+        var bounds_group = new L.featureGroup([]);
+        var basemap0 = L.tileLayer('https://api.mapbox.com/styles/v1/allankapoor/ciw87dfkb00052pmku8mj3xe5/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiYWxsYW5rYXBvb3IiLCJhIjoiY2lsMXJ0MzRwM2FkcXV5bTNjM3Ntd2hiZCJ9.gZ0Os-He8BnzY56KdTVWpg', {
+            attribution: '&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses by-sa/2.0/">CC-BY-SA</a>',
+            maxZoom: 28
+        });
+            basemap0.addTo(map);
+
+        function setBounds() {}
+
+        //[37.8353140727,-122.333996188]
+
+/*function getType(feature, layer) {
+    layer.on('click', function (e) {
+
+        var type = e.target.feature.properties.TYPOLOGY_C;
+
+        switch(type){
+            case 101:
+            console.log( "Typology is 101");
+            break;
+
+            case 102:
+            console.log( "Typology is 102");
+            break;
+
+            case 103:
+            console.log( "Typology is 103");
+            break;
+
+            case 111:
+            console.log( "Typology is 111");
+            break;
+
+            case 112:
+            console.log( "Typology is 112");
+            break;
+
+            case 113:
+            console.log( "Typology is 113");
+            break;
+
+            case 201:
+            console.log( "Typology is 201");
+            break;
+
+            case 202:
+            console.log( "Typology is 202");
+            break;
+
+            case 203:
+            console.log( "Typology is 203");
+            break;
+
+            case 211:
+            console.log( "Typology is 211");
+            break;
+
+            case 212:
+            console.log( "Typology is 212");
+            break;
+
+            case 213:
+            console.log( "Typology is 213");
+            break;
+
+            case 301:
+            console.log( "Typology is 301");
+            break;
+
+            case 302:
+            console.log( "Typology is 302");
+            break;
+
+            case 303:
+            console.log( "Typology is 303");
+            break;
+
+            case 311:
+            console.log( "Typology is 311");
+            break;
+
+            case 312:
+            console.log( "Typology is 312");
+            break;
+
+            case 313:
+            console.log( "Typology is 313");
+            break;
+
+            default:
+            console.log ("Please click on shore segment");
+        }
+
+    });
+}
+
+
+        function style_linedata_0_0() {
+            return {
+                pane: 'pane_linedata_0',
+                opacity: 1,
+                color: 'rgba(0,243,255,1.0)',
+                dashArray: '',
+                lineCap: 'round',
+                lineJoin: 'bevel',
+                weight: 4.0,
+                fillOpacity: 0,
+                }
+                } */
+        map.createPane('pane_linedata_0');
+        map.getPane('pane_linedata_0').style.zIndex = 400;
+        map.getPane('pane_linedata_0').style['mix-blend-mode'] = 'normal';
+    var layer_linedata_0 = new L.geoJson(json_linedata_0, {
+        attribution: '<a href=""></a>',
+        pane: 'pane_linedata_0',
+        onEachFeature: getType,
+        style: style_linedata_0_0,
+    });
+        bounds_group.addLayer(layer_linedata_0);
+        map.addLayer(layer_linedata_0);
+        setBounds();
+
+
+
+
+</script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <!--<script src="js/bootstrap.min.js"></script>-->
+    </body>
+</html>

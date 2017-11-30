@@ -1,12 +1,13 @@
 <!doctype html>
 <html lang="en">
     <head>
+
+        <!-- Specify character code. Declare control of page dimensions and scaling. Set the width of the page equal to the width of the device. Set the initial zoom level when the page is first loaded by the browser. -->
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-capable" content="yes">
-
 
         <!-- Latest Bootstrap compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -14,60 +15,62 @@
         <!-- Links to CSS Stylesheets -->
         <link rel="stylesheet" href="css/leaflet.css">
         <link rel="stylesheet" href="css/qgis2web.css">
-        <link rel="stylesheet" href="css/animate.css">
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/project.css">
 
-
-        <!-- Imported Fonts -->
+        <!-- Imported Fonts from Google Fonts -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 
         <!-- Link to Javascript & JQuery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script type="text/javascript" src="js/script.js"></script>
 
+        <!-- Page Name -->
         <title>Project</title>
     </head>
 
 
     <body>
-        <!--Navigation -->
+
+        <!--Navigation Header-->
+        <!--Fix navbar to the top of page -->
         <nav class="navbar navbar-fixed-top">
-        <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-        <!-- (Is below code used for responsive?)-->
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        </button>
-        <div class="navbar-logo">Bay Adapt</div>
-        </div>
-        <!--Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse">
-        <ul class="nav navbar-nav">
-        <li class="hover"><a href="index.html">Map</a></li>
-        <li class="hover"><a href="#">Project</a></li>
-        <li class="hover"><a href="#">Shoreline Typologies</a></li>
-        <li class="hover"><a href="#">Adaptive Infrastructure</a></li>
-        </ul>
-        </div><!--.navbar-collapse -->
-        </div><!-- /.navbar-header -->
-        </div><!-- /.container-fluid -->
+                <!-- Blue container holding all nav elements -->
+                <div class="container-fluid">
+                    <!-- Class to format parts of the navbar-->
+                            <div class="navbar-header">
+                                        <!-- Bootstrap code for responsive. Six lines below are not being used, but use it for mobile responsive design later.-->
+                                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                                <span class="sr-only">Toggle navigation</span>
+                                                <span class="icon-bar"></span>
+                                                <span class="icon-bar"></span>
+                                                <span class="icon-bar"></span>
+                                        </button>
+                                <!-- Class to format Bay Adapt logo-->
+                                <div class="navbar-logo">Bay Adapt</div>
+                            </div> <!-- /.navbar-header -->
+                            <!--Navigation links on nav bar-->
+                            <div class="collapse navbar-collapse">
+                                <ul class="nav navbar-nav">
+                                    <li class="hover"><a href="index.html">Map</a></li>
+                                    <li class="hover"><a href="project.html">Project</a></li>
+                                    <li class="hover"><a href="#">Shoreline Typologies</a></li>
+                                    <li class="hover"><a href="#">Adaptive Infrastructure</a></li>
+                                </ul>
+                            </div><!--collapse .navbar-collapse -->
+                    </div><!-- /.navbar-header -->
+                </div><!-- /.container-fluid -->
         </nav>
 
-<!-- Main Content -->
 
-<div class="wrapper">
-     <div class="container">
+    <!-- Main Content: contains information about Bay Adapt project. -->
 
-    <div class="infoOverlay">
-    <p class="animated"> Bay Adapt is a geospatial analysis of the San Francisco Bay shoreline to inform sea level rise adaptation strategy decisions at the regional and local level. This interactive mapping tool can be used by planners in coastal communities throughout the Bay Area to assess what physical adaptation strategies are most likely to be applicable to their respective shorelines. The map divides the Bay Area coastline into 100-ft segments and classifies each based on edge condition, slope, and exposure to wave action.<br/><br/>This interactive mapping tool can be used by planners in coastal communities throughout the Bay Area to assess what physical adaptation strategies are most likely to be applicable to their respective shorelines. Bay Adapt is intended to inform conversations about which strategies to study further at the site level.<br/> <br/>
-     </p>
-    </div>
+        <div class="wrapper">
+            <div class="container">
 
+                <div class="infoOverlay">
+                <p class="overlay1"> Bay Adapt is a geospatial analysis of the San Francisco Bay shoreline to inform sea level rise adaptation strategy decisions at the regional and local level. This interactive mapping tool can be used by planners in coastal communities throughout the Bay Area to assess what physical adaptation strategies are most likely to be applicable to their respective shorelines. The map divides the Bay Area coastline into 100-ft segments and classifies each based on edge condition, slope, and exposure to wave action.<br/><br/> </p>
+            </div>
 </div>
 
 

@@ -1,45 +1,107 @@
-/*Styles for Project page */
+/* Universal styles */
+
+   /*Set the width, height,
+   font, padding, and margin
+   for html and body*/
    html,body {
-    width: 100%;
-    height: 100%;
-    margin:0
-    padding:0;
-    font-family: Raleway, sans-serif;
+        width: 100%;
+        height: 100%;
+        margin:0
+        padding:0;
+        font-family: Raleway, sans-serif;
+        }
 
+/* Responsive styles for screens with a minimum
+   width of 940 px*/
+@media only screen and (min-width: 940px){
+
+    /*Set the line height for
+    paragraph style*/
+    p{
+        line-height: 25px;
+        }
+
+    /*Set container to be a background image of the bridge.
+      Set properties for z-index, height, weight, overlow, etc.
+    */
+    .container{
+        background-image: url("images/SF_Bridge.jpg");
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 100%;
+        padding-top: 10%;
+        z-index: 100;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        min-width: 1024px;
+        overflow: scroll;
+        position: fixed;
+        top: 80px;
+        left: 0;
+        }
+
+    /*Set properties for text overlay on top of
+      picture*/
+    .overlay1{
+        float: right;
+        width: 40%;
+        padding-right: 5%;
+        text-align: justify;
+        margin-right: 6%;
+        }
 }
 
-p{
-    line-height: 25px;
-}
+/* Responsive styles for screens with a maximum
+   width of 939 px*/
+@media only screen and (max-width:939px) {
 
+    /*Set the line height and font size
+    paragraph style*/
+    p{
+        line-height: 20px;
+        font-size: 12px;
+        }
+    /*Set wrapper to full height*/
+    .wrapper{
+        height: 100%;
+        }
 
-.wrapper{
-    height: 100%;
-}
+    /*Set container with SF bridge image*/
+    .container{
+        background-image: url("images/SF_Bridge.jpg");
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 100%;
+        z-index: 100;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        min-width: 1024px;
+        overflow: scroll;
+        position: fixed;
+        top: 80px;
+        left: 0;
+        }
 
+    /*Set a small background to overlay text
+      on tablet size screen*/
+    .infoOverlay{
+        background-color: white;
+        opacity: 50%;
+        }
 
+    /*Set the text overlay*/
+    .overlay1{
+        background-color: white;
+        float: right;
+        width: 30%;
+        padding-right: 5%;
+        margin-right: 20%;
+        text-align: justify;
+        padding-top: 5%;
+        overflow-y: auto;
+        }
 
-.container{
-    background-image: url("images/SF_Bridge.jpg");
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 100%;
-    padding-top: 10%;
-    z-index: 100;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    min-width: 1024px;
-    overflow: scroll;
-    position: fixed;
-    top: 80px;
-    left: 0;
-}
-
-.infoOverlay{
-    float: right;
-    width: 31%;
-    padding-right: 5%;
-    text-align: justify;
 }
 

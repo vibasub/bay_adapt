@@ -1,54 +1,61 @@
 
 
-function setBounds() {}
-
-
+/* Function to grab "Typology_C" data from json_linedata. Once user
+  clicks on the data line, save the "Typology_C" data from dataset
+  into variable "type". Execute part of the switch statement depending
+  on "type" value.Use JQuery to add applicability values and format
+  using css. */
 function getType(feature, layer) {
+
+    /* When click on layer, do the following*/
     layer.on('click', function (e) {
 
-
+        /* Save typology_C data into variable type*/
         var type = e.target.feature.properties.TYPOLOGY_C;
+        /*hide overlay and table data overlay*/
         $(".overlay").hide();
         $("#tableOverlay").css('visibility', 'hidden');
         $("#tableOverlay").scrollTop(0);
-        $("#app1").css("color" , "white");
-            $("#app2").css("color" , "white");
-            $("#app3").css("color" , "white");
-            $("#app4").css("color" , "white");
-            $("#app5").css("color" , "white");
-            $("#app6").css("color" , "white");
-            $("#app7").css("color" , "white");
-            $("#app8").css("color" , "white");
-            $("#app9").css("color" , "white");
-            $("#app10").css("color" , "white");
-            $("#app11").css("color" , "white");
-            $("#app12").css("color" , "white");
-            $("#app13").css("color" , "white");
-            $("#app14").css("color" , "white");
-            $("#app15").css("color" , "white");
-            $("#app16").css("color" , "white");
-            $("#app17").css("color" , "white");
-            $("#app18").css("color" , "white");
-            $("#app19").css("color" , "white");
-            $("#app20").css("color" , "white");
-            $("#app21").css("color" , "white");
 
+        /* Reset each applicability type to white on every click,
+          before switch statement is executed*/
+        $("#app1").css("color" , "white");
+        $("#app2").css("color" , "white");
+        $("#app3").css("color" , "white");
+        $("#app4").css("color" , "white");
+        $("#app5").css("color" , "white");
+        $("#app6").css("color" , "white");
+        $("#app7").css("color" , "white");
+        $("#app8").css("color" , "white");
+        $("#app9").css("color" , "white");
+        $("#app10").css("color" , "white");
+        $("#app11").css("color" , "white");
+        $("#app12").css("color" , "white");
+        $("#app13").css("color" , "white");
+        $("#app14").css("color" , "white");
+        $("#app15").css("color" , "white");
+        $("#app16").css("color" , "white");
+        $("#app17").css("color" , "white");
+        $("#app18").css("color" , "white");
+        $("#app19").css("color" , "white");
+        $("#app20").css("color" , "white");
+        $("#app21").css("color" , "white");
 
         $("#case"+type).css('visibility', 'visible');
         $("#case"+type).show({
-            left: '250px',
-            opacity: '0.5',
-            height: '150px',
-            width: '150px',
-            complete: function(ev){
-            $("#tableOverlay").css('visibility', 'visible');
+        complete: function(ev){
+        $("#tableOverlay").css('visibility', 'visible');
+        }
+        });
 
-            }
-            });
-
+        /* Switch statement that checks each of the different
+           case types. */
         switch(type){
+
+            /* If type matches case 101, add the following titles,
+            text for applicability rows, and change text to
+            green color for "high" value */
             case 101:
-            console.log( "Typology is 101");
             $("#edgeText").text("Natural");
             $("#waveText").text("Sheltered");
             $("#topoText").text("Gentle Slopes");
@@ -73,17 +80,15 @@ function getType(feature, layer) {
             $("#app19").text("High").css("color", "#64E36F");
             $("#app20").text("High").css("color", "#64E36F");
             $("#app21").text("High").css("color", "#64E36F");
-            $("#case101").show({
-            /*left: '250px',
-            opacity: '0.5',
-            height: '150px',
-            width: '150px'*/}, function(ev){
-                $("#tableOverlay").show();
+            $("#case101").show({}, function(ev){
+            $("#tableOverlay").show();
             });
             break;
 
 
-
+            /* If type matches case 102, add the following titles,
+            text for applicability rows, and change text to
+            green color for "high" value */
             case 102:
             console.log( "Typology is 102");
             $("#edgeText").text("Natural");
@@ -117,6 +122,9 @@ function getType(feature, layer) {
             width: '150px'*/});
             break;
 
+            /* If type matches case 103, add the following titles,
+            text for applicability rows, and change text to
+            green color for "high" value */
             case 103:
             console.log( "Typology is 103");
             $("#edgeText").text("Natural");
@@ -150,6 +158,9 @@ function getType(feature, layer) {
             width: '150px'*/});
             break;
 
+            /* If type matches case 111, add the following titles,
+            text for applicability rows, and change text to
+            green color for "high" value */
             case 111:
             console.log( "Typology is 111");
             $("#edgeText").text("Natural");
@@ -182,6 +193,9 @@ function getType(feature, layer) {
             height: '150px*/});
             break;
 
+            /* If type matches case 112, add the following titles,
+            text for applicability rows, and change text to
+            green color for "high" value */
             case 112:
             console.log( "Typology is 112");
             $("#edgeText").text("Natural");
@@ -215,6 +229,9 @@ function getType(feature, layer) {
             width: '150px'*/});
             break;
 
+            /* If type matches case 113, add the following titles,
+            text for applicability rows, and change text to
+            green color for "high" value */
             case 113:
             console.log( "Typology is 113");
             $("#edgeText").text("Natural");
@@ -248,6 +265,9 @@ function getType(feature, layer) {
             width: '150px'*/});
             break;
 
+            /* If type matches case 201, add the following titles,
+            text for applicability rows, and change text to
+            green color for "high" value */
             case 201:
             console.log( "Typology is 201");
             $("#edgeText").text("Man-Made Soft");
@@ -281,9 +301,12 @@ function getType(feature, layer) {
             width: '150px'*/});
             break;
 
+            /* If type matches case 202, add the following titles,
+            text for applicability rows, and change text to
+            green color for "high" value */
             case 202:
             console.log( "Typology is 202");
-           $("#edgeText").text("Man-Made Soft");
+            $("#edgeText").text("Man-Made Soft");
             $("#waveText").text("Sheltered");
             $("#topoText").text("Medium Slopes");
             $("#app1").text("Medium");
@@ -314,6 +337,9 @@ function getType(feature, layer) {
             width: '150px'*/});
             break;
 
+            /* If type matches case 203, add the following titles,
+            text for applicability rows, and change text to
+            green color for "high" value */
             case 203:
             console.log( "Typology is 203");
             $("#edgeText").text("Man-Made Soft");
@@ -347,6 +373,9 @@ function getType(feature, layer) {
             width: '150px'*/});
             break;
 
+            /* If type matches case 211, add the following titles,
+            text for applicability rows, and change text to
+            green color for "high" value */
             case 211:
             console.log( "Typology is 211");
             $("#edgeText").text("Man-Made Soft");
@@ -380,9 +409,12 @@ function getType(feature, layer) {
             width: '150px'*/});
             break;
 
+            /* If type matches case 212, add the following titles,
+            text for applicability rows, and change text to
+            green color for "high" value */
             case 212:
             console.log( "Typology is 212");
-           $("#edgeText").text("Man-Made Soft");
+            $("#edgeText").text("Man-Made Soft");
             $("#waveText").text("Exposed");
             $("#topoText").text("Medium Slopes");
             $("#app1").text("High").css("color", "#64E36F");
@@ -413,6 +445,9 @@ function getType(feature, layer) {
             width: '150px'*/});
             break;
 
+            /* If type matches case 213, add the following titles,
+            text for applicability rows, and change text to
+            green color for "high" value */
             case 213:
             console.log( "Typology is 213");
             $("#edgeText").text("Man-Made Soft");
@@ -446,6 +481,9 @@ function getType(feature, layer) {
             width: '150px'*/});
             break;
 
+            /* If type matches case 301, add the following titles,
+            text for applicability rows, and change text to
+            green color for "high" value */
             case 301:
             console.log( "Typology is 301");
              $("#edgeText").text("Man-Made Hardened");
@@ -479,9 +517,12 @@ function getType(feature, layer) {
             width: '150px'*/});
             break;
 
+            /* If type matches case 302, add the following titles,
+            text for applicability rows, and change text to
+            green color for "high" value */
             case 302:
             console.log( "Typology is 302");
-          $("#edgeText").text("Man-Made Hardened");
+            $("#edgeText").text("Man-Made Hardened");
             $("#waveText").text("Sheltered");
             $("#topoText").text("Medium Slopes");
             $("#app1").text("Medium");
@@ -512,9 +553,12 @@ function getType(feature, layer) {
             width: '150px'*/});
             break;
 
+            /* If type matches case 303, add the following titles,
+            text for applicability rows, and change text to
+            green color for "high" value */
             case 303:
             console.log( "Typology is 303");
-           $("#edgeText").text("Man-Made Hardened");
+            $("#edgeText").text("Man-Made Hardened");
             $("#waveText").text("Sheltered");
             $("#topoText").text("Steep Slopes");
             $("#app1").text("Low");
@@ -545,6 +589,9 @@ function getType(feature, layer) {
             width: '150px'*/});
             break;
 
+            /* If type matches case 311, add the following titles,
+            text for applicability rows, and change text to
+            green color for "high" value */
             case 311:
             console.log( "Typology is 311");
             $("#edgeText").text("Man-Made Hardened");
@@ -581,6 +628,9 @@ function getType(feature, layer) {
             width: '150px'*/});
             break;
 
+            /* If type matches case 312, add the following titles,
+            text for applicability rows, and change text to
+            green color for "high" value */
             case 312:
             console.log( "Typology is 312");
            $("#edgeText").text("Man-Made Hardened");
@@ -619,6 +669,9 @@ function getType(feature, layer) {
             $("#tableOverlay").show();
             break;
 
+            /* If type matches case 313, add the following titles,
+            text for applicability rows, and change text to
+            green color for "high" value */
             case 313:
             console.log( "Typology is 313");
             $("#edgeText").text("Man-Made Hardened");
@@ -663,7 +716,7 @@ function getType(feature, layer) {
     });
 }
 
-
+    /*Function to style line of the data set*/
         function style_linedata_0_0() {
             return {
                 pane: 'pane_linedata_0',
